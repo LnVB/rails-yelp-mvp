@@ -10,3 +10,21 @@
 # Faker::Address.street_address
 # Faker::Restaurant.review
 # category: Restaurant::CATEGORY.sample
+require "faker"
+
+puts "clean the DB..."
+Restaurant.destroy_all
+puts "DB is clean!"
+
+puts "creating 5 restaurants..."
+5.times do
+  restaurant = Restaurant.create!(
+    name: Faker::Restaurant.name,
+    address: Faker::Address.street_address,
+    phone_number: Faker::PhoneNumber.phone_number.to_s,
+    category: Restaurant::CATEGORY.sample
+  )
+  puts "Restaurant #{restaurant.id} was created"
+end
+
+puts "All done!"
