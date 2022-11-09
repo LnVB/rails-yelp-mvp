@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="card mb-3 resto">
+    <%= render @restaurant %>
+  </div>
+  <div class="card mb-3 reviews">
+    <h3>Reviews</h3>
+    <ul>
+      <% @restaurant.reviews.each do |review| %>
+        <li>
+          <div class="card mb-3 review">
+            <%= review.content %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
