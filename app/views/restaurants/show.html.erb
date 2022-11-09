@@ -2,7 +2,6 @@
   <div class="card mb-3 resto">
     <%= render @restaurant %>
   </div>
-  <%= link_to 'add a review', new_restaurant_review_path(@restaurant) %>
   <div class="card mb-3 reviews">
     <h3>Reviews</h3>
     <ul>
@@ -14,5 +13,13 @@
         </li>
       <% end %>
     </ul>
+  </div>
+  <div class="container">
+    <h1>Add your own review</h1>
+    <%= simple_form_for([@restaurant, @review]) do |f| %>
+      <%= f.input :rating, as: :integer %>
+      <%= f.input :content, as: :text %>
+      <%= f.submit 'Submit your review', class: 'btn btn-secondary' %>
+    <% end %>
   </div>
 </div>
