@@ -2,6 +2,7 @@
   <div class="card mb-3 resto">
     <%= render @restaurant %>
   </div>
+  <%= link_to 'add a review', new_restaurant_review_path(@restaurant) %>
   <div class="card mb-3 reviews">
     <h3>Reviews</h3>
     <ul>
