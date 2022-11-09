@@ -1,8 +1,10 @@
 <div id="restaurants">
   <% restaurants.each do |restaurant| %>
-    <%= render restaurant %>
-    <p>
-      <%= link_to "Show this restaurant", restaurant_path(restaurant)%>
-    </p>
+    <div class= "card">
+      <%= render restaurant %>
+      <p>
+        <%= link_to "Show this restaurant", restaurant_path(restaurant)%>
+      </p>
+    </div>
   <% end %>
 </div>
